@@ -29,20 +29,20 @@
     pincel.strokeRect(150, 0, 50, 50);
 
     var color = prompt("ingrese el color en ingles");
-    var filas = parseInt(prompt("Ingrese coordenada x"));
-    var columnas = parseInt(prompt("Ingrese coordenada y"));
-    var finfilas = parseInt(prompt("Ingrese coordenada final x"));
-    var finalcolumnas = parseInt(prompt("Ingrese coordenada final y"));
+    var valorFilas = parseInt(prompt("Ingrese coordenada x"));
+    var valorColumnas = parseInt(prompt("Ingrese coordenada y"));
+    var finFilas = parseInt(prompt("Ingrese coordenada final x"));
+    var finalColumnas = parseInt(prompt("Ingrese coordenada final y"));
 
-    function imprimir(filas, columnas, finfilas, finalcolumnas, color){
-        for(var filas; filas <= finfilas; filas++){
-            for(var columnas; columnas <= finalcolumnas; columnas++){
+    function imprimir(valorfilas, valorColumnas, finfilas, finalcolumnas, color){
+        for(var filas = valorfilas; filas <= finfilas; filas++){
+            for(var columnas=valorColumnas; columnas <= finalcolumnas; columnas++){
                 pincel.fillStyle = color;
                 pincel.fillRect(filas, columnas, 1,1);
             }
         }
     }
 
-    imprimir(filas, columnas, finfilas, finalcolumnas, color);
+    imprimir(valorFilas, valorColumnas, finFilas, finalColumnas, color);
 
 </script>
