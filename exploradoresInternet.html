@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function dibujarRectangulo(x, y, base, altura, color) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    }
+
+    function escribirTexto(x , y, texto) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+
+    var porcentajes2019 = [81, 9, 3, 3, 4];
+    var porcentajes2009 = [6, 47, 41, 3, 3];
+    var exploradores = ["Chrome", "Firefox", "Edge", "Safari", "otros"];
+    var colores = ["yellow", "orange", "darkblue", "red", "gray"]
+   
+    var tamanho = 100;
+        
+        escribirTexto(100, 80, "2009");
+    //grafico del 2009
+            for(var cont2009 = 0; cont2009<=4; cont2009++){
+                dibujarRectangulo(100, tamanho, 50, (porcentajes2009[cont2009]), colores[cont2009]);
+                tamanho = tamanho + porcentajes2009[cont2009];
+            }
+
+        tamanho = 100;
+        escribirTexto(200, 80, "2019");
+    //grafico del 2019
+            for(var cont2019 = 0; cont2019<=4; cont2019++){
+                dibujarRectangulo(200, tamanho, 50, (porcentajes2019[cont2019]), colores[cont2019]);
+                tamanho = tamanho + porcentajes2019[cont2019];
+        
+     //referencia del grafico
+        var tamaño = 100;
+            for(var cont = 0; cont <=4; cont++){
+                
+                dibujarRectangulo(60, tamaño, 10, 10, colores[cont]);
+                escribirTexto(0, tamaño, exploradores[cont]);
+                tamaño = tamaño + 20;
+
+            }
+    
+    }
+
+</script>
