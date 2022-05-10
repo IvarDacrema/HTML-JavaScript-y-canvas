@@ -1,11 +1,48 @@
-<canvas width="600" height="400"> </canvas>
+<canvas width="600" height="400"> 
+
+</canvas>
 
 <script>
+    
     var pantalla = document.querySelector("canvas");
+
     var pincel = pantalla.getContext("2d");
 
-    pincel.fillStyle = 'green';
-    pincel.fillRect = (0, 0, 50, 50);
+    pincel.fillStyle = "green";
+    pincel.fillRect(0, 0, 50, 50);
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(0, 0, 50, 50);
 
-    
+    pincel.fillStyle = "red";
+    pincel.fillRect(50, 0, 50, 50);
+    pincel.strokeStyle = "white";
+    pincel.strokeRect(50, 0, 50, 50);
+
+    pincel.fillStyle = "purple";
+    pincel.fillRect(100, 0, 50, 50);
+    pincel.strokeStyle = "yellow";
+    pincel.strokeRect(100, 0, 50, 50);
+
+    pincel.fillStyle = 'blue';
+    pincel.fillRect(150, 0, 50, 50);
+    pincel.strokeStyle = "pink";
+    pincel.strokeRect(150, 0, 50, 50);
+
+    var color = prompt("ingrese el color en ingles");
+    var filas = parseInt(prompt("Ingrese coordenada x"));
+    var columnas = parseInt(prompt("Ingrese coordenada y"));
+    var finfilas = parseInt(prompt("Ingrese coordenada final x"));
+    var finalcolumnas = parseInt(prompt("Ingrese coordenada final y"));
+
+    function imprimir(filas, columnas, finfilas, finalcolumnas, color){
+        for(var filas; filas <= finfilas; filas++){
+            for(var columnas; columnas <= finalcolumnas; columnas++){
+                pincel.fillStyle = color;
+                pincel.fillRect(filas, columnas, 1,1);
+            }
+        }
+    }
+
+    imprimir(filas, columnas, finfilas, finalcolumnas, color);
+
 </script>
