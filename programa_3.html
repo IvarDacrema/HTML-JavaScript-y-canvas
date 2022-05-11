@@ -10,4 +10,11 @@ var pincel = pantalla.getContext("2d");
 pincel.fillStyle = ("gray");
 pincel.fillRect(0, 0, 600, 400);
 
+function alerta(evento){
+    console.log(evento);
+    alert("Haz hecho click en " + evento.x + " x, e " + evento.y + " en y");
+}
+
+pantalla.onclick = alerta;
+
 </script>
