@@ -10,11 +10,42 @@ var pincel = pantalla.getContext("2d");
 pincel.fillStyle = ("gray");
 pincel.fillRect(0, 0, 600, 400);
 
+/*
 function alerta(evento){
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+
     console.log(evento);
-    alert("Haz hecho click en " + evento.x + " x, e " + evento.y + " en y");
+    alert("Haz hecho click en " + x + " x, e " + y + " en y");
+}
+*/
+
+function dibujarCirculo(x, y, color) {
+
+    pincel.fillStyle = color;
+    pincel.beginPath();
+    pincel.arc(x, y, 20, 0, 2*3.14);
+    pincel.fill();
+
 }
 
-pantalla.onclick = alerta;
+function dibujarFlor(evento){
+
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+
+    dibujarCirculo(x, y, "yellow");
+    dibujarCirculo(x+40, y, "red");
+    dibujarCirculo(x-40, y, "red");
+    dibujarCirculo(x, y+40, "red");
+    dibujarCirculo(x, y-40, "red");
+
+    dibujarCirculo(x+28.3, y-28.3, "blue");
+    dibujarCirculo(x-28.3, y-28.3, "blue");
+    dibujarCirculo(x+28.3, y+28.3, "blue");
+    dibujarCirculo(x-28.3, y+28.3, "blue");
+}
+
+pantalla.onclick = dibujarFlor;
 
 </script>
