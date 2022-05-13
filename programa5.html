@@ -1,0 +1,62 @@
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+var pantalla = document.querySelector("canvas");
+var pincel = pantalla.getContext("2d");
+var valMaxX;
+var valMaxY;
+var radio = 5;
+
+pincel.fillStyle = "lightgrey";
+pincel.fillRect(0, 0, 600, 400);
+
+function dibujarCirculo(x, y, radio, color){
+    pincel.fillStyle = color;
+    pincel.beginPath();
+    pincel.arc(x, y, radio, 0, 2*Math.PI);
+    pincel.fill();
+}
+
+function disenharObjetivo(x, y, radio){
+    dibujarCirculo(x, y, radio+15, "red");
+    dibujarCirculo(x, y, radio+7.5, "white");
+    dibujarCirculo(x, y, radio, "red");
+}
+
+function limpiarPantalla(){
+    pincel.clearRect(0, 0, 600, 400);
+}
+
+function  numeroAleatorio(maximo){
+    return Math.floor(Math.random()*maximo); 
+}
+
+var x = 0;
+
+function actualizarPantalla(){
+    limpiarPantalla();
+    valMaxX = numeroAleatorio(600);
+    valMaxY = numeroAleatorio(400);
+    disenharObjetivo(valMaxX, valMaxY, radio);
+    x++;
+}
+
+function disparo(evento){
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+
+    if((x<valMaxX+radio) && (x>valMaxX-radio) && (y<valMaxY+radio) && (y>valMaxY-radio)){
+    alert("Acertaste");
+    }
+}
+
+setInterval(actualizarPantalla,10000);
+
+pantalla.onclick = disparo;
+
+
+
+</script>
