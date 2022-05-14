@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>     
+
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        document.write("<br>");
+    }  
+    
+    var anhoMundial = 1930;
+
+    imprimir("<h1>Años de Mundiales de la FIFA</h1>")
+
+    alert("Te mostramos todas las fechas del mundial");
+    while(anhoMundial <= 2022){
+        if(anhoMundial>=1942 && anhoMundial<=1946){
+            imprimir("El mundial no se realizo en el " + anhoMundial + " por la segunda guerra mundial");
+        }else{
+            imprimir("El mundial fue en el " + anhoMundial);
+        }
+        anhoMundial = anhoMundial + 4;
+    }
+</script>

@@ -1,0 +1,66 @@
+<meta charset="UTF-8">
+
+<script>
+
+function saltoLinea(){
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function imprimir(frase){
+    document.write(frase);
+    saltoLinea();
+}    
+
+
+alert("JUEGO DE ADIVINANZA");
+
+alert("Tiene que adivinar cual es el numero entero que estamos pensando");
+
+var numVar = parseInt(prompt("Introduzca entre cuantos numeros quiere adivinar."));
+
+var numeroIncognito  = Math.round(Math.random()*numVar);
+
+var limiteIntentos = parseInt(prompt("¿Cuantos intentos quieres tener?"));
+
+var cont = 1;
+
+alert("INTENTO " + cont);    
+        
+var numeroUsuario = parseInt(prompt("¿Cual es el numero?"));
+
+while(numeroIncognito!=numeroUsuario && cont!=limiteIntentos){
+ 
+        cont = cont+1;
+        
+        if(numeroIncognito<numeroUsuario){
+            if((numeroUsuario-numeroIncognito) >= 30){
+                alert(numeroUsuario + " es mucho mas grande que numero incognito");
+            } if ((numeroUsuario-numeroIncognito) <= 5){
+                alert(numeroUsuario + " es apenas mas grande")
+            } if ((numeroUsuario-numeroIncognito) > 5 && (numeroUsuario-numeroIncognito) < 30){
+                alert(numeroUsuario + " es más grande que Numero Incognito");
+            }
+       
+        }if(numeroIncognito>numeroUsuario){
+            if((numeroIncognito-numeroUsuario) >= 30){
+                alert(numeroUsuario + " es mucho mas chico que numero incognito");
+            } if ((numeroIncognito-numeroUsuario) <= 5){
+                alert(numeroUsuario + " es apenas mas chico")
+            } if ((numeroIncognito-numeroUsuario) > 5 && (numeroIncognito-numeroUsuario) < 30){
+                alert(numeroUsuario + " es más chico que Numero Incognito");
+            }
+        }  
+        
+        numeroUsuario = parseInt(prompt("¿Cual es el numero?"));
+}
+
+if(numeroIncognito==numeroUsuario){
+    alert("CORRECTO el numero era " + numeroUsuario);
+} else {
+    alert("PERDISTE el numero era " + numeroIncognito)
+}
+
+imprimir("Fin del Programa");
+
+</script>

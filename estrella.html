@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>     
+
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltoLinea();
+    }  
+
+    imprimir("<h3>" + "PROGRAMA PARA IMPRIMIR ESTRELLAS" + "</h3>");
+    
+    var filas = parseInt(prompt("¿Cuantas filas de estrellas quieres?"))
+    var columnas = parseInt(prompt("¿Cuantas columnas de estrellas quieres?"))
+    for(var cont = 1; cont<=filas; cont++){
+        
+        for (var cont1 = 1; cont1<=columnas; cont1++){
+            document.write("*");
+        }
+
+        saltoLinea();
+    } 
+    saltoLinea();
+    imprimir("Fin del Programa");
+
+</script>

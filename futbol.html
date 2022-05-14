@@ -1,0 +1,41 @@
+<meta charset="UTF-8"
+
+<h1>Calculo de Puntacion de Equipo de Futbol</h1>
+<br>
+<br>
+<script>     
+
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        document.write("<br>");
+    }    
+
+    var equipo = prompt("Nombra a tu equipo");
+    var victorias = parseInt(prompt("¿Cuantas victorias tuvo " + equipo + "?"));
+    var empates = parseInt(prompt("¿Cuantos empates tuvo " + equipo + "?"));
+    var derrotas = prompt("¿Cuantas derrotas tuvo " + equipo + "?");
+    var puntos = (victorias*3 + empates);
+    
+    imprimir(equipo + " tiene.");
+    imprimir(victorias + " victorias.");
+    imprimir(empates + " empates.");
+    imprimir(derrotas + " derrotas.");
+    imprimir("con una suma total de " + puntos + " de puntos en el torneo.")
+
+    var puntosAnhoPasado = parseInt(prompt("Introduzca los puntos del años pasado."));
+    
+    if(puntosAnhoPasado>puntos){
+        imprimir("La campaña fue peor que la del año pasado");
+    }if(puntosAnhoPasado==puntos){
+        imprimir("La campaña fue igual que la del año pasado.");
+    }if(puntosAnhoPasado<puntos) {
+        imprimir("La temporada fue mejor a la del año pasado.");  
+    } 
+      
+    </script>
+

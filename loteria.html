@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>     
+
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        document.write("<br>");
+    }    
+
+    function loteria(){
+        var numeroN = parseInt(prompt("Introduzca el indice que quiere"));
+        var numeroIncognito = Math.round(Math.random()*numeroN);
+        return numeroIncognito;
+    }
+
+    var numero = loteria();
+
+    var numeroUsuario = parseInt(prompt("Que numero cree que es el incognito"));
+
+    while(numero!=numeroUsuario){
+            alert("Incorrecto");
+            numeroUsuario = parseInt(prompt("Pruebe nuevamente"));
+    }
+
+    alert("CORRECTO");
+</script>    

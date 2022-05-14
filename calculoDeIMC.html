@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<h1>Calculo de IMC</h1>
+<br>
+<br>
+<script>     
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(peso, altura, nombre){
+        document.write("El IMC de " + nombre);
+        saltoLinea();
+        document.write("tomando en cuenta su altura de " + altura + " m.")
+        saltoLinea();
+        document.write("y su peso de " + peso + " kg.");
+        saltoLinea();
+        document.write("es de " + calculoImc(peso, altura));
+        saltoLinea();    
+    }
+
+    function calculoImc(peso, altura){
+        return peso/(altura*altura);
+    }
+
+    function promedioImc(imc1, imc2){
+        document.write("El promedio de los IMC es de " + ((imc1+imc2)/2));
+    }
+
+    alert("Introduzca dos usuarios para calculo de IMC");
+
+    var nom1 = prompt("Introduzca nombre de un Usuario");
+    var peso1 = parseFloat(prompt( "Peso de " + nom1 + " en Kg --> xx.x"));
+    var altura1 = parseFloat(prompt("Altura de " + nom1 + " en metros --> x.xx"));
+    var imc1 = calculoImc(peso1, altura1);
+
+    var nom2 = prompt("Introduce nombre del segundo usuario");
+    var peso2 = parseFloat(prompt("Peso de " + nom2 + " en Kg --> xx.x"));
+    var altura2 = parseFloat(prompt("Altura de " + nom2 + " en metros --> x.xx"));
+    var imc2 = calculoImc(peso2, altura2);
+
+    imprimir(peso1, altura1, nom1);
+    if(imc1<18.5){
+        document.write(nom1 + " esta por debajo del peso saludable.")
+    } if (imc1>=18.5 && imc1<=24.9){
+        document.write(nom1 + " esta en el peso correcto.");
+    } if(imc1>=25 && imc1<=29.9){
+        document.write(nom1 + " tiene preobesidad.");
+    } if(imc1>=30){
+        document.write(nom1 + " tiene obesidad.");
+    }
+    
+    saltoLinea();
+
+    imprimir(peso2, altura2, nom2);
+    if(imc2<18.5){
+        document.write(nom2 + " esta por debajo del peso saludable.")
+    } if (imc2>=18.5 && imc2<=24.9){
+        document.write(nom2 + " esta en el peso correcto.");
+    } if(imc2>=25 && imc2<=29.9){
+        document.write(nom2 + " tiene preobesidad.");
+    } if(imc2>=30){
+        document.write(nom2 + " tiene obesidad.");
+    }
+    
+    saltoLinea();
+    
+    promedioImc(imc1, imc2);
+
+
+
+</script>

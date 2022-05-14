@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+
+    var inicioDeSesionRegistrado = "Maxi";
+    var contrasenhaRegistrada = "Morocha2022";
+    var contrasenhaIngresada = null;
+    var contUsuario = 1;
+    var contContra = 1; 
+    
+    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    
+    while(inicioDeSesionIngresado!=inicioDeSesionRegistrado && contUsuario<=2){
+        alert("Error de usuario, intente nuevamente")
+            if(contUsuario <= 2){
+                contUsuario = contUsuario + 1;
+                inicioDeSesionIngresado = prompt("Ingrese su usuario"); 
+            }
+    }    
+
+    if(contUsuario==3){
+
+        alert("Acceso Denegado");
+    
+    } else {
+        
+        contrasenhaIngresada = prompt("Ingrese su contraseña");
+            
+            while(contrasenhaRegistrada!=contrasenhaIngresada && contContra <= 2){
+                alert("Error de contraseña, intente nuevamente");
+        
+                contContra = contContra + 1;
+                contrasenhaIngresada = prompt("Ingrese su contraseña");
+            }
+            if(contContra==3){
+                alert("Acceso Denegado");
+            } else {
+                alert("Bienvenido " + inicioDeSesionRegistrado);
+            }
+    }
+
+    alert("Fin del Programa")
+   
+</script>

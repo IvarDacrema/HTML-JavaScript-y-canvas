@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+    
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltoLinea();
+    }
+
+    var cantidadFamiliares = parseInt(prompt("Introduzca la cantidad de familiares"));
+    var sumaEdades = 0;
+
+    for(var cont = 1; cont<=cantidadFamiliares; cont++){
+        var edad = parseInt(prompt("Edad del integrante numero " + cont + " de la familia." ))
+        sumaEdades = edad+sumaEdades;
+    }
+
+    alert("La suma de las edades da " + (sumaEdades));
+    alert("Su media es " + (sumaEdades/cantidadFamiliares));
+
+    for(var cont = 1; cont <= 100; cont++){
+        if(cont%2 == 0){
+            alert(cont + " es numero par.");
+        }
+    }
+
+    alert("FIN");
+
+</script>

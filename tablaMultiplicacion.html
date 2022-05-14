@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>     
+
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        document.write("<br>");
+    } 
+
+    var tabla = parseInt(prompt("Introduzca la tabla que desea saber"));
+
+    imprimir("La tabla de " + tabla + " es.");
+
+    for(var multi = 1; multi < 11; ++multi){
+        imprimir(tabla + "x" + multi + "=" + (tabla * multi));
+    }
+
+</script>

@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+    
+    function saltoLinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("hr");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write("<big>" + frase + "</big>");
+        saltoLinea();
+    }
+
+    var anho = 2022;
+    imprimir("Hola Mundo");
+    imprimir("La Edad de Araceli es "  + (anho-1992));
+    imprimir("La edad de Maximiliano es " + (anho-1992));
+    anho = 2027;
+    imprimir("La edad de Ludmila es " + (anho-1996));
+</script>
