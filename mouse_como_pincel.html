@@ -6,7 +6,10 @@
     var pantalla = document.querySelector('canvas');
     var pincel = pantalla.getContext('2d');
     var puedoDibujar = false;
-    var color;
+    var color = "blue";
+    var color1 = "yellow";
+    var color2 = "purple";
+    var color3 = "pink";
 
     limpiarPantalla();
     
@@ -30,11 +33,11 @@
         var y = evento.pageY - pantalla.offsetTop;
 
         if(x < 30 && y < 30){
-            color = 'red';
+            color = color1;
         } if(x > 30 && x < 60 && y < 30) {
-            color = 'green';
+            color = color2;
         } if(x > 60 && x < 90 && y < 30) {
-            color = 'blue';
+            color = color3;
         }
     }
 
@@ -52,13 +55,13 @@
         pincel.fillRect(0, 0, 600, 400);
 
         //creo opcion de color rojo
-        pincel.fillStyle = "red";
+        pincel.fillStyle = color1;
         pincel.fillRect(0, 0, 30, 30);
         //opcion de color verde
-        pincel.fillStyle = "green";
+        pincel.fillStyle = color2;
         pincel.fillRect(30, 0, 30, 30);
         //opcion de color azul
-        pincel.fillStyle = "blue";
+        pincel.fillStyle = color3;
         pincel.fillRect(60, 0, 30, 30);
     }
 
