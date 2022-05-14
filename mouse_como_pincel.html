@@ -5,34 +5,25 @@
 <script>
     var pantalla = document.querySelector('canvas');
     var pincel = pantalla.getContext('2d');
-
-    pincel.fillStyle = 'grey';
-    pincel.fillRect(0, 0, 600, 400);
-
     var puedoDibujar = false;
-    
-    //creo opcion de color rojo
-    pincel.fillStyle = "red";
-    pincel.fillRect(0, 0, 30, 30);
-    //opcion de color verde
-    pincel.fillStyle = "green";
-    pincel.fillRect(30, 0, 30, 30);
-    //opcion de color azul
-    pincel.fillStyle = "blue";
-    pincel.fillRect(60, 0, 30, 30);
+    var color;
+
+    limpiarPantalla();
     
     function dibujarCirculo(evento) {
         if(puedoDibujar) {
-            var x = evento.pageX - pantalla.offsetLeft + 90;
-            var y = evento.pageY - pantalla.offsetTop + 30;
-            pincel.fillStyle = elegirColor;
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            if(x<90 && y<30){
+                deshabilitarDibujar();
+            } else {    
+            pincel.fillStyle = color;
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
+            }
         }
     }
-
-    var color;
 
     function elegirColor(evento){
         var x = evento.pageX - pantalla.offsetLeft;
@@ -45,11 +36,7 @@
         } if(x > 60 && x < 90 && y < 30) {
             color = 'blue';
         }
-
-        return color;
     }
-
-    pantalla.onmousemove = dibujarCirculo;
 
     function habilitarDibujar() {
         puedoDibujar = true;
@@ -63,12 +50,26 @@
         pincel.clearRect(0, 0, 600, 400);
         pincel.fillStyle = 'grey';
         pincel.fillRect(0, 0, 600, 400);
-    }
 
-    pantalla.oncontextmenu = limpiarPantalla;
+        //creo opcion de color rojo
+        pincel.fillStyle = "red";
+        pincel.fillRect(0, 0, 30, 30);
+        //opcion de color verde
+        pincel.fillStyle = "green";
+        pincel.fillRect(30, 0, 30, 30);
+        //opcion de color azul
+        pincel.fillStyle = "blue";
+        pincel.fillRect(60, 0, 30, 30);
+    }
 
     pantalla.onmousedown = habilitarDibujar;
 
     pantalla.onmouseup = deshabilitarDibujar;
+
+    pantalla.onclick = elegirColor;
+    
+    pantalla.onmousemove = dibujarCirculo;
+
+    pantalla.ondblclick = limpiarPantalla;
 
 </script>
